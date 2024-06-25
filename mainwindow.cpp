@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setWindowTitle("Sudoku");
+    setWindowTitle("DLX Sudoku");
     style_cells();
     std::srand(std::time(0));
 }
@@ -179,7 +179,7 @@ void MainWindow::check_board()
 
             if (!board[row][col] || rows[row][value] || cols[col][value] || subgrids[subgrid][value])
             {
-                QMessageBox::information(this, "Sudoku Solver", "The board is incorrect");
+                QMessageBox::information(this, "DLX Sudoku Solver", "The board is incorrect");
                 return;
             }
 
@@ -189,7 +189,7 @@ void MainWindow::check_board()
         }
     }
 
-    QMessageBox::information(this, "Sudoku Solver", "The board is correct");
+    QMessageBox::information(this, "DLX Sudoku Solver", "The board is correct");
 }
 
 void MainWindow::read_board()
@@ -237,7 +237,7 @@ void MainWindow::solve_board()
     }
     else
     {
-        QMessageBox::information(this, "Sudoku Solver", "No solution found");
+        QMessageBox::information(this, "DLX Sudoku Solver", "No solution found");
     }
 }
 
